@@ -1,0 +1,16 @@
+.jumbo {
+  background-color: red;
+  color: white;
+  font-size: 25px;
+  padding: 30px;
+}
+
+.role {
+  float: right;
+  text-align: left;
+}
+
+.dataCard {
+  z-index: 5px;
+  margin: 20px;
+}
