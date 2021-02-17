@@ -1,9 +1,9 @@
 // TODO: Include packages needed for this application
-const inquirer = require("inquirer")
+
 const fs = require("fs")
 const mgmtMarkdown = require("./utils/mgmtCard")
-const mgmtQuestions = require("./mgmtQuestions")
 const path = require('path');
+const mgmtQuestions = require("./mgmtQuestions");
 
 
 function writeToFile(fileName, data) {
@@ -14,17 +14,43 @@ function writeToFile(fileName, data) {
     }
 
 function init() {
-    inquirer.prompt([
 
-    mgmtQuestions()
-
-    // ]).then ((data) => {
-    //     writeToFile("TeamProfile.html", mgmtMarkdown(data))
-    // })
-])
+    let mgmtQues = mgmtQuestions()
+    
 }
-
 
 // Function call to initialize app
 init()
+
+// function init() {
+//     inquirer.prompt([
+//             {
+//                 type: "input",
+//                 name: "name",
+//                 message: "What is the team manager's name?"
+//             },
+//             {
+//                 type: "input",
+//                 name: "ID",
+//                 message: "What is the team manager's ID?"
+//             },
+//             {
+//                 type: "input",
+//                 name: "email",
+//                 message: "What is the team manager's email?"
+//             },
+//             {
+//                 type: "input",
+//                 name: "office",
+//                 message: "What is the team manager's office number?"
+//             },
+
+//                 //data is all of the answers from above responses
+//     ]).then ((data) => {
+//         writeToFile("TeamProfile.html", mgmtMarkdown(data))
+//     })
+// }
+
+// // Function call to initialize app
+// init()
 

@@ -1,3 +1,16 @@
+const fs = require("fs")
+const index = require("./index")
+const inquirer = require("inquirer")
+const mgmtMarkdown = require("./utils/mgmtCard")
+const path = require('path');
+
+function writeToFile(fileName, data) {
+    //                pathing to certain file.  cwd is current working directory, so we're pathing into our cwd.  fileName is what we pass into the function as well as the data
+        fs.writeFileSync(path.join(process.cwd(), fileName),data, (err) =>
+        err ? console.error(err) : console.log("Success!")
+        )
+    }
+
 function mgmtQuestions() {
     inquirer.prompt([
         {
@@ -7,7 +20,7 @@ function mgmtQuestions() {
         },
         {
             type: "input",
-            name: "ID",
+            name: "identification",
             message: "What is the team manager's ID?"
         },
         {
@@ -26,5 +39,7 @@ function mgmtQuestions() {
         writeToFile("TeamProfile.html", mgmtMarkdown(data))
     })
 }
+
+
 
 module.exports = mgmtQuestions;
