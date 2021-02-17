@@ -2,6 +2,7 @@ const fs = require("fs")
 const index = require("./index")
 const inquirer = require("inquirer")
 const mgmtMarkdown = require("./utils/mgmtCard")
+const manager = require("./manager")
 const path = require('path');
 
 function writeToFile(fileName, data) {
@@ -11,35 +12,36 @@ function writeToFile(fileName, data) {
         )
     }
 
-function mgmtQuestions() {
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "name",
-            message: "What is the team manager's name?"
-        },
-        {
-            type: "input",
-            name: "identification",
-            message: "What is the team manager's ID?"
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What is the team manager's email?"
-        },
-        {
-            type: "input",
-            name: "office",
-            message: "What is the team manager's office number?"
-        },
+// function mgmtQuestions() {
+//     inquirer.prompt([
+//         {
+//             type: "input",
+//             name: "name",
+//             message: "What is the team manager's name?"
+//         },
+//         {
+//             type: "input",
+//             name: "identification",
+//             message: "What is the team manager's ID?"
+//         },
+//         {
+//             type: "input",
+//             name: "email",
+//             message: "What is the team manager's email?"
+//         },
+//         {
+//             type: "input",
+//             name: "office",
+//             message: "What is the team manager's office number?"
+//         },
 
-            //data is all of the answers from above responses
-    ]).then ((data) => {
-        writeToFile("TeamProfile.html", mgmtMarkdown(data))
-    })
-}
+//             //data is all of the answers from above responses
+//     ]).then ((data) => {
+//         writeToFile("TeamProfile.html", mgmtMarkdown(data))
+
+//     })
+// }
 
 
 
-module.exports = mgmtQuestions;
+// module.exports = mgmtQuestions;
