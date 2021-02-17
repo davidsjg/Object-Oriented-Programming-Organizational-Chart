@@ -1,15 +1,37 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer")
-const generateCard = require("./utils/generateMarkdown")
+const mgmtMarkdown = require("./utils/mgmtCard")
+const generateCard = require("./utils/mgmtCard")
 
-// TODO: Create an array of questions for user input
-const questions = [];
+function init() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the team manager's name?"
+        },
+        {
+            type: "input",
+            name: "ID",
+            message: "What is the team manager's ID?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the team manager's email?"
+        },
+        {
+            type: "input",
+            name: "office",
+            message: "What is the team manager's office number?"
+        },
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
+            //data is all of the answers from above responses
+    ]).then ((data) => {
+        writeToFile("TeamProfile.html", mgmtMarkdown(data))
+    })
+}
 
 // Function call to initialize app
-init();
+init()
+
