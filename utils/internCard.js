@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+function mgmtMarkdown(data) {
+  return `<!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -20,15 +21,15 @@
   
     <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem;" >
       <div class="card-body">
-        <h5 class="card-title">f</h5>
+        <h5 class="card-title">${data.name}</h5>
         <!-- <svg class="bi eyeglasses" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg> -->
         <i class="bi bi-shield-shaded"></i>
-        <h5 class="card-text role" >-Position-</h5>
+        <h5 class="card-text role" >${data.value}</h5>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: d</li>
-        <li class="list-group-item">Email: s</li>
-        <li class="list-group-item">Office Number: undefined</li>
+        <li class="list-group-item">ID: ${data.id}</li>
+        <li class="list-group-item">Email: ${data.email}</li>
+        <li class="list-group-item">Current School: ${data.school}</li>
       </ul>
     </div>
     
@@ -44,3 +45,7 @@
   
   </body>
   </html>
+`;
+}
+
+module.exports = mgmtMarkdown;
