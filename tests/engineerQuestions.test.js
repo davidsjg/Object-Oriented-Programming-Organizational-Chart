@@ -4,7 +4,6 @@ const { expect } = require("@jest/globals")
 const { eventNames } = require("process")
 const Employee = require("../LID/Employee")
 const Engineer = require("../LID/Engineer")
-const Manager = require("../LID/Manager")
 
 test ("can create a employee object", () => {
   let employee = new Employee()
@@ -16,6 +15,7 @@ test ("can enter employee name", () => {
   let employee = new Employee(name)
   expect(employee.name).toBe(name)
 })
+
 
 test ("can enter employee ID", () => {
   let name = "Joey"
@@ -32,13 +32,13 @@ test ("can enter employee email", () => {
   expect(employee.email).toBe(email)
 })
 
-test ("can enter employee office", () => {
+test ("can enter employee github", () => {
   let name = "Joey"
   let id = 50
   let email = "j.davidson18@gmail.com"
-  let office = 20
-  let employee = new Manager(name, id, email, office)
-  expect(employee.office).toBe(office)
+  let github = "davidsjg"
+  let employee = new Engineer(name, id, email, github)
+  expect(employee.github).toBe(github)
 })
 
 

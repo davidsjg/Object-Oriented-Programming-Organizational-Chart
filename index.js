@@ -84,15 +84,18 @@ function nextMember () {
             for (let i = 1; i < teamArr.length; i++) {
                 let temp = i
                 
-                if (data.name === "Manager") {
+                if (data === "Manager") {
+                    console.log("you are in MGMT Markdown")
                     writeToFile("TeamProfile.html", mgmtMarkdown(teamArr[temp]))
                 }else if (data.name === "Engineer") {
+                    console.log("you are in engineer markdown")
                     writeToFile("TeamProfile.html", engineerMarkdown(teamArr[temp]))
                 } else {
+                    console.log("you are in intern markdown ")
                     writeToFile("TeamProfile.html", internMarkdown(teamArr[temp]))
                 }
                 
-                console.log("what the fuck")
+                console.log("you are in looper")
             }
 
             // fs.writeFileSync("TeamProfile.html", mgmtMarkdown(), (err) =>
@@ -145,7 +148,7 @@ function intern() {
                 type: "input",
                 name: "name",
                 message: "What is the Intern's name?",
-                default: "Rob Thomas - Matchbox Ma'Fuckin 20 BIOTCH"
+                default: "Enter Name"
             },
             {
                 type: "input",
