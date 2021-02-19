@@ -12,4 +12,7 @@ Potential Future Plans: Adding external links to the cards, such as LinkedIn.
 
 Additional Notes: The final author of this application is Joey Davidson. He can be reached at j.davidson18@gmail.com
 
-WEBSITE LAUNCH:
+WEBSITES
+
+https://github.com/davidsjg/Object-Oriented-Programming-Organizational-Chart
+https://www.youtube.com/watch?v=XuzxTNM4Xf8&feature=youtu.be&ab_channel=JoeDavidson
